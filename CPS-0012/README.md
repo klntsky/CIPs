@@ -97,11 +97,23 @@ Another downside of tight coupling between wallets and query layers is that, unl
 
 Inability to interchange query layer providers results in vendor lock-in. Query layer providers are disincentivized to opensource their infrastructure setup or provide a competitive service. Dependency on a fixed set of entities to run the infrastructure makes it easier for adversaries to attack dApps by taking over the infrastructure.
 
+Having accepted standards drastically reduces the complexity and cost for new providers to develop.
+This creates a query layer marketplace where providers can be more easily compared by customers.
+
 ## Use cases
 
-- Wallets want to provide their end users with ability to run custom query layer software
-- dApp developers want to avoid vendor lock-in
-- New Cardano infrastructure providers want to join pools of interchangeable query layer suppliers, instead of replicating or deploying one of the many competing products
+### Multi-Provider Wallets
+Wallets may wish to allow users to bring their own data layer provider.
+By having a standard interface wallets would be able to support this, which would reduce the wallet's operating costs.
+For the users this gives them flexibility, redundancy and the option to run their wallet on their own infrastructure. 
+
+### DApps Avoiding Lock-In
+DApp developers don't want to tie their infrastructure to one query layer provider.
+By being able to switch providers without the need for significant engineering, they can avoid providers which do not offer fair pricing.
+
+### New Infrastructure Providers
+New Cardano infrastructure providers want to be able join a pools of interchangeable query layer suppliers.
+Without standardization new providers must invest significant time to develop their own.  
 
 ## Goals
 
