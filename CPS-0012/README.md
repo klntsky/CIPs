@@ -15,6 +15,36 @@ Created: 2023-11-27
 
 Cardano lacks a standardized query layer. This leads to suboptimal tooling, dApp and wallet architecture.
 
+### Acknowledgements
+
+<details>
+  <summary><strong>Workshop 1 - 2024-01-25</strong></summary>
+
+  We would like to thank those that contributed to the first Query Layer Standardization workshop hosted by The Wallets Working Group ([see shared drive with resources](https://drive.google.com/drive/folders/1baSYHfWJdUh5dwRkHjY7qnaufjuO8sP2?usp=sharing)).
+
+  Hosts:
+
+  - Ryan Williams
+  - Adam Dean
+
+  Participants:
+
+  - Dmang
+  - George APEX Pool
+  - Leo H
+  - Marcin Szamotulski
+  - Markus Gufler
+  - Matt Davis
+  - Matthieu Pizenberg
+  - Michael Chappell
+  - NEXUS Crypto
+  - Nick Cook
+  - Rhys Bartels-Waller
+  - Ruslan Dudin
+  - Torbjørn Løvseth Finnøy
+
+</details>
+
 ## Problem
 
 ### Query Layers and Tooling
