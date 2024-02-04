@@ -13,7 +13,11 @@ Created: 2023-11-27
 
 ## Abstract
 
-Cardano lacks a standardized query layer. This leads to suboptimal tooling, dApp and wallet architecture.
+Blockchains are notoriously bad databases, as storage is expensive and queries are complex.
+Query layers services abstract away the difficulties of indexing blockchains, offering builders standard API interfaces to access data. 
+
+Cardano's query layers lack standardization.
+This leads to suboptimal tooling, dApp and wallet architecture.
 
 ### Acknowledgements
 
