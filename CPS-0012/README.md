@@ -75,7 +75,7 @@ As a result, there is a need to support multiple incompatible APIs in downstream
 - [Mesh.js](https://meshjs.dev/providers)
 - [Lucid](https://lucid.spacebudz.io/)
 - [cardano-transaction-library](https://github.com/Plutonomicon/cardano-transaction-lib/blob/develop/doc/runtime.md)
-- [cardano-js-sdk Provider](https://github.com/input-output-hk/cardano-js-sdk/tree/master/packages/core/src/Provider)
+- [cardano-js-sdk](https://github.com/input-output-hk/cardano-js-sdk/tree/master/packages/core/src/Provider)
 
 Query layer providers are not identical, which means that the *promise* of abstracting away from a particular query layer provider completely, that an offchain library may want to give to its users, will either be left *unfulfilled* (i.e. some features will work with some providers, but not others) or the scope of the downstream API will have to be *reduced* to the very minimum that is covered by every supported query layer.
 
