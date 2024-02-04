@@ -51,6 +51,16 @@ This leads to suboptimal tooling, dApp and wallet architecture.
 
 ## Problem
 
+Cardano nodes offer limited options for querying chain data.
+For builders, running chain indexer infrastructure can alleviate the data availability issues of the Cardano node.
+But this brings with it large overheads in running the nodes, chain followers, data storage and data access.
+
+Query layer providers offer builders the opportunity to abstract away the infrastructure complexities of Cardano data availability, usually to some cost.
+These providers are extremely useful and in turn are used as a foundational element for hundreds of tools.
+
+Cardano has a range of query layer providers, each with their own interfaces and business motivations.
+This can present issues for builders who wish to build with multiple providers.
+
 ### Query Layers and Tooling
 
 Lack of a standardized query layer results in multiple different implementations of roughly the same set of functionality:
@@ -58,13 +68,13 @@ Lack of a standardized query layer results in multiple different implementations
 - [Blockfrost](https://blockfrost.io/)
 - [Koios](https://www.koios.rest/)
 - [Maestro](https://www.gomaestro.org)
-- [Ogmios](https://ogmios.dev/)
 
 As a result, there is a need to support multiple incompatible APIs in downstream tools, examples of which are:
 
 - [Mesh.js](https://meshjs.dev/providers)
 - [Lucid](https://lucid.spacebudz.io/)
 - [cardano-transaction-library](https://github.com/Plutonomicon/cardano-transaction-lib/blob/develop/doc/runtime.md)
+- [cardano-js-sdk Provider](https://github.com/input-output-hk/cardano-js-sdk/tree/master/packages/core/src/Provider)
 
 Query layer providers are not identical, which means that the *promise* of abstracting away from a particular query layer provider completely, that an offchain library may want to give to its users, will either be left *unfulfilled* (i.e. some features will work with some providers, but not others) or the scope of the downstream API will have to be *reduced* to the very minimum that is covered by every supported query layer.
 
