@@ -122,6 +122,8 @@ Without standardization new providers must invest significant time to develop th
 
 2. Describe how can it be used in different contexts: HTTP API, JavaScript interfaces, ???
 
+3. A query layer standard which meets the needs of query layer providers, wallet developers and dApp developers.
+
 ## Open Questions
 
 ### How can we encourage query layer providers to adopt the solution?
