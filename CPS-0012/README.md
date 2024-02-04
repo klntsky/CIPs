@@ -5,6 +5,7 @@ Status: Open
 Category: Tools
 Authors:
     - Vladimir Kalnitsky <vladimir@mlabs.city>
+    - Ryan Williams <ryan.williams@intersectmbo.org>
 Proposed Solutions: []
 Discussions:
     - https://github.com/cardano-foundation/CIPs/pull/625
@@ -123,6 +124,24 @@ Without standardization new providers must invest significant time to develop th
 
 ## Open Questions
 
-- How can we encourage query layer providers to adopt the solution?
-- How can we encourage wallet developers to adopt the solution?
-- How can we encourage dApp developers to adopt the solution?
+### How can we encourage query layer providers to adopt the solution?
+
+Such standardization could have drawbacks for existing query layer providers.
+
+The primary argument against such an initiative is the potential loss of business advantage from query layer providers.
+As standardized providers would loose the ability to differentiate themselves via data shape and language.
+
+For providers which charge per request this can negatively impact their ability to control their value proposition.
+Such providers are currently incentivized to make the data returned via queries contain the least possible useful information.
+Standards would mean providers would not be able to control the amount of data that is returned upon a query.
+This would mean existing providers would have to adjust their business and value proposition to customers.
+
+### How can we encourage wallet developers to adopt the solution?
+
+For wallet providers, a standardized query layer would offer long term benefits which out weigh any upfront engineering costs.
+With users being able to bring their own data providers, wallets will incur less costs to the use of their providers.
+
+### How can we encourage dApp developers to adopt the solution?
+
+DApp developers would benefit from a more open and competitive query layer market.
+Developers will be able to choose the provider which best fits the needs of their dApp.
