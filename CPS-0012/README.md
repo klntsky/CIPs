@@ -10,45 +10,15 @@ Proposed Solutions: []
 Discussions:
     - https://github.com/cardano-foundation/CIPs/pull/625
 Created: 2023-11-27
+License: CC-BY-4.0
 ---
 
 ## Abstract
 
-Blockchains lack the properties of classical databases, as storage is expensive and queries are complex.
 Query layers services abstract away the difficulties of indexing blockchains, offering builders API interfaces to access data. 
 
 Cardano's query layers lack standardization.
 This leads to suboptimal tooling, dApp and wallet architecture.
-
-### Acknowledgements
-
-<details>
-  <summary><strong>Workshop 1 - 2024-01-25</strong></summary>
-
-  We would like to thank those that contributed to the first Query Layer Standardization workshop hosted by The Wallets Working Group ([see shared drive with resources](https://drive.google.com/drive/folders/1baSYHfWJdUh5dwRkHjY7qnaufjuO8sP2?usp=sharing)).
-
-  Hosts:
-
-  - Ryan Williams
-  - Adam Dean
-
-  Participants:
-
-  - Dmang
-  - George APEX Pool
-  - Leo H
-  - Marcin Szamotulski
-  - Markus Gufler
-  - Matt Davis
-  - Matthieu Pizenberg
-  - Michael Chappell
-  - NEXUS Crypto
-  - Nick Cook
-  - Rhys Bartels-Waller
-  - Ruslan Dudin
-  - Torbjørn Løvseth Finnøy
-
-</details>
 
 ## Problem
 
@@ -147,3 +117,37 @@ With users being able to bring their own data providers, wallets will incur less
 
 DApp developers would benefit from a more open and competitive query layer market.
 Developers will be able to choose the provider which best fits the needs of their dApp.
+
+## Acknowledgements
+
+<details>
+  <summary><strong>Workshop 1 - 2024-01-25</strong></summary>
+
+  We would like to thank those that contributed to the first Query Layer Standardization workshop hosted by The Wallets Working Group ([see shared drive with resources](https://drive.google.com/drive/folders/1baSYHfWJdUh5dwRkHjY7qnaufjuO8sP2?usp=sharing)).
+
+  Hosts:
+
+  - Ryan Williams
+  - Adam Dean
+
+  Participants:
+
+  - Dmang
+  - George APEX Pool
+  - Leo H
+  - Marcin Szamotulski
+  - Markus Gufler
+  - Matt Davis
+  - Matthieu Pizenberg
+  - Michael Chappell
+  - NEXUS Crypto
+  - Nick Cook
+  - Rhys Bartels-Waller
+  - Ruslan Dudin
+  - Torbjørn Løvseth Finnøy
+
+</details>
+
+## Copyright
+
+This CPS is licensed under [CC-BY-4.0](https://creativecommons.org/licenses/by/4.0/legalcode).
