@@ -5,6 +5,7 @@ Category: Tools
 Status: Proposed
 Authors:
     - Vladimir Kalnitsky <klntsky@gmail.com>
+    - Giovanni Garufi <giovanni@mlabs.city>
 Implementors: []
 Discussions:
     - https://discord.gg/MU8vHAgmGy
@@ -60,6 +61,12 @@ This document should only cover domain errors.
 
 In CIP-30, pagination is not reliable, because there is no guarantee that the set of UTxOs does not change between calls. This behavior is not suitable for DeFi: consistency should be prioritized, and pagination should be avoided.
 
+### Transports
+
+The API can be implemented across several transports. The goal is to allow several different clients, possibly written in different languages with it.
+For this reason we provide an [Openapi schema](./open-api.json) and a more general [JSON-rcp](./json-rpc.json) one. These are generated from the same set of data, the Openapi one is meant to be a specification for interacting with this API through HTTP, while the JSON-rpc one can be followed with transports such as websockets, or when the API is exposed through an injected javascript object.
+
+
 ### Methods
 
 This section contains transport-agnostic method descriptions & their parameter lists.
@@ -67,206 +74,10 @@ This section contains transport-agnostic method descriptions & their parameter l
 The scope of this section is loosely based on a [comparison table for existing Cardano query layers](./Query_Layer_API_Comparison.md).
 The goal is to make it so that the API could be implemented via simple adapters that transform requests and responses to the appropriate formats.
 
-The payload formats used below are references to [CIP-0116 - Standard JSON encoding for Domain Types](https://cips.cardano.org/cip/CIP-0116), which specifies cardano domain types via a JSON schema.
+The payload formats used below are either references to [CIP-0116 - Standard JSON encoding for Domain Types](https://cips.cardano.org/cip/CIP-0116), which specifies cardano domain types via a JSON schema, or references to the [Query Layer JSON schema](./query-layer.json) which we defined in this CIP to define some types that are not present in the CDDL spec.
 
-#### UTxOs
 
-Resource name: `utxo`
-
-##### By address
-
-Endpoint name: `address`
-
-Request:
-
-- address: `Address`
-
-Response:
-
-- `TransactionUnspentOutput[]`
-
-##### By payment credential
-
-Endpoint name: `payment_credential`
-
-Request:
-
-- credential: `Credential`
-
-Response:
-
-- `TransactionUnspentOutput[]`
-
-##### By staking credential
-
-Endpoint name: `stake_credential`
-
-Request:
-
-- credential: `Credential`
-
-Response:
-
-- `TransactionUnspentOutput[]`
-
-##### By asset
-
-Endpoint name: `asset`
-
-Request:
-
-- script_hash: `ScriptHash`
-- asset_name: `AssetName`
-
-Response:
-
-- `TransactionUnspentOutput[]`
-
-##### By transaction ID
-
-- transaction_hash: `TransactionHash`
-
-Response:
-
-- `TransactionUnspentOutput[]`
-
-#### Transaction
-
-##### By hash
-
-Request:
-
-- transaction_hash: `TransactionHash`
-
-Response:
-
-- `Transaction`
-
-#### Transaction history
-
-##### By Address
-
-##### By payment credential
-
-##### By stake credential
-
-#### Script
-
-##### Native Script by hash
-
-Request:
-
-- `ScriptHash`
-
-Response:
-
-- `NativeScript`
-
-##### Plutus Script by hash
-
-Request:
-
-- `ScriptHash`
-
-Response:
-
-- `PlutusScript`
-
-#### PlutusData
-
-##### By hash
-
-Request:
-
-- hash: `DataHash`
-
-Response:
-
-- `PlutusData`
-
-#### Reward history
-
-##### By stake address
-
-TODO
-
-#### Block
-
-##### By hash
-
-Request:
-
-- `BlockHash`
-
-Response:
-
-- `Block`
-
-#### Epoch
-
-TODO
-
-#### Genesis
-
-TODO
-
-#### Metadata
-
-##### By transaction hash
-
-TODO
-
-#### Protocol parameters
-
-##### By epoch
-
-Request:
-
-- epoch: `UInt32`
-
-Response:
-
-- TODO: we should add `ProtocolParameters` to CIP-116
-
-#### Stake pools
-
-##### List of active stake pools
-
-Response:
-
-```
-{
-  pool_id: PoolPubKeyHash,
-  live_stake: UInt64,
-  active_stake: UInt64
-}[]
-```
-
-##### Get pool by ID
-
-Request:
-
-- pool_pubkey_hash: `PoolPubKeyHash`
-
-Response:
-
-- `PoolParams`
-
-### Transports
-
-TODO: specify how to go from the description above to consumable API specs.
-
-#### HTTP
-
-TBD
-
-#### WebSocket
-
-TBD
-
-#### Injected JavaScript object
-
-TBD
+[View the list of endpoints here](./endpoints.md)
 
 ## Rationale: how does this CIP achieve its goals?
 
